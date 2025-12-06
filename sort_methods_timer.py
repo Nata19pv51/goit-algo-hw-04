@@ -116,13 +116,13 @@ def pythont_standart_sort(arr):
 
 if __name__ == '__main__':
     print("HELLO")
-    # insertion_sort_lst = []
+    insertion_sort_lst = []
     merge_sort_lst = []
     tim_sort_lst = []
     pythont_standart_sort_lst = []
     x_axis = []        
     
-    for i in range(10, 100000, 10000):
+    for i in range(100, 2000, 100):
         print(f"******************** {i} ************************")
         x_axis.append(i)
 
@@ -132,9 +132,9 @@ if __name__ == '__main__':
         print(f"Default sort: {default_s:.6f} sec")
         pythont_standart_sort_lst.append(default_s)
 
-        # insertion_s = timer_measurement(arr, insertion_sort)
-        # print(f"Insertion: {insertion_s:.6f} sec")
-        # insertion_sort_lst.append(insertion_s)
+        insertion_s = timer_measurement(arr, insertion_sort)
+        print(f"Insertion: {insertion_s:.6f} sec")
+        insertion_sort_lst.append(insertion_s)
         
         # Merge Sort (O(n log n))
         merge_st = timer_measurement(arr, mergesort)
@@ -149,15 +149,15 @@ if __name__ == '__main__':
     # Налаштування розміру фігури
     plt.figure(figsize=(12, 7))
 
-    # # Лінія для insertion_sort
-    # plt.plot(
-    #     x_axis,
-    #     insertion_sort_lst,
-    #     marker='o',
-    #     linestyle='-',
-    #     color='red',
-    #     label='Insertion sort'
-    # )
+    # Лінія для insertion_sort
+    plt.plot(
+        x_axis,
+        insertion_sort_lst,
+        marker='o',
+        linestyle='-',
+        color='red',
+        label='Insertion sort'
+    )
 
     # Лінія для merge_sort
     plt.plot(
